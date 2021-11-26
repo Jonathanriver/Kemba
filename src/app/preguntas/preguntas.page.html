@@ -1,0 +1,182 @@
+<ion-header class="header-Dashboard">
+    <ion-toolbar class="toolbar-dashboard">
+        <!-- <ion-title>Dashboard</ion-title> -->
+        <ion-grid>
+            <ion-row>
+                <ion-col size="4" class="ion-text-center">
+                    <img src="../../assets/images/IMAGEN PERFIL CABECERA.png" alt="" class="imagen-header" (click)="editar()">
+                </ion-col>
+                <ion-col size="8" class="ion-text-left">
+                    <ion-item lines="none" style="--background: transparent;">
+                        <p slot="start" style="font-size: 20px;font-weight: bold;color: white;margin: 26px 0px 0px 0px;text-transform: capitalize;">
+                            {{Nombre}}</p>
+                        <ion-icon style="font-size: 20px;font-weight: bold;color: white;margin: 26px 0px 0px 0px;text-transform: capitalize;" slot="end" name="exit-outline" (click)="Salir()"></ion-icon>
+
+                    </ion-item>
+                    <p style="font-size: 10px;color: white;margin-left:17px;">Último ingreso: 19/03/2021</p>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-item lines="none">
+        <p class="ion-text-center texto-simulador">
+            ¿Sabes cuánto dinero necesitas?
+        </p>
+    </ion-item>
+    <ion-item lines="none">
+        <ion-radio-group>
+            <ion-item lines="none">
+                <ion-label>Si</ion-label>
+                <ion-radio slot="start" value="cord" (click)="Si(1)"></ion-radio>
+            </ion-item>
+
+            <ion-item lines="none">
+                <ion-label>No</ion-label>
+                <ion-radio slot="start" value="duesenberg" (click)="Si(2)"></ion-radio>
+            </ion-item>
+        </ion-radio-group>
+    </ion-item>
+    <br>
+
+    <div *ngIf="Show">
+        <ion-item lines="none">
+            <ion-card style="width: 100%;">
+                <ion-card-header class="ion-text-center">
+                    <p style="color: #4F47BF;font-weight: bold;font-size: 20px;font-family: 'Berlin';">Monto</p>
+                </ion-card-header>
+                <ion-card-content>
+                    <ion-grid>
+                        <ion-row>
+                            <ion-col class="ion-text-center">
+                                <p style="font-size: 45px;">{{ Valor|currency }}</p>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col class="ion-text-left">
+                                <ion-input type="text" [(ngModel)]="Valor" maxlength="6" style="border-bottom: 0.5px solid #4F47BF;" (change)="textareaMaxLengthValidation()" required>
+                                </ion-input>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col class="ion-text-left">
+                                <p>El monto maximoes de $600.000 <br> el monto minimo es de $150.000</p>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col class="ion-text-center">
+                                <ion-button style="--background: #4F47BF;" (click)="swipeNext()">Siguiente</ion-button>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+
+                </ion-card-content>
+                <br>
+            </ion-card>
+        </ion-item>
+    </div>
+
+    <div *ngIf="Parte2">
+        <ion-item lines="none">
+            <ion-card style="background-color: white;--box-shadow: transparent;width: 100%;">
+                <ion-card-header class="ion-text-center">
+                    <p style="color: #4F47BF;font-weight: bold;font-size: 20px;font-family: 'Berlin';">A diferir</p>
+                </ion-card-header>
+                <ion-card-content>
+                    <ion-grid>
+                        <ion-row>
+                            <ion-col class="ion-text-center">
+                                <p style="font-size: 45px;">{{ Dias }} Meses</p>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col class="ion-text-center">
+                                <ion-range min="1" max="12" color="secondary" [(ngModel)]="Dias">
+                                    <ion-label slot="start">1</ion-label>
+                                    <ion-label slot="end">12</ion-label>
+                                </ion-range>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col class="ion-text-center">
+                                <p>El plazo maximo de 12 meses <br> El Plazo minimo es de 1 mes</p>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col class="ion-text-center">
+                                <ion-button style="--background: #4F47BF;" (click)="swipeNext2()">Siguiente</ion-button>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+
+                </ion-card-content>
+            </ion-card>
+        </ion-item>
+    </div>
+
+    <div *ngIf="Parte3">
+        <ion-item lines="none">
+            <ion-card style="background-color: white;--box-shadow: transparent;width: 100%;">
+                <ion-card-header class="ion-text-center">
+                    <p style="color: #4F47BF;font-weight: bold;font-size: 20px;font-family: 'Berlin';">Multinivel</p>
+                </ion-card-header>
+                <ion-card-content>
+                    <ion-grid>
+                        <ion-row>
+                            <ion-col class="ion-text-center">
+                                <p style="font-size: 45px;">{{ Multinivel }}</p>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col class="ion-text-center">
+                                <ion-item lines="none">
+                                    <ion-select placeholder="Escoje Uno" [(ngModel)]="Multinivel">
+                                        <ion-select-option value="Avon">Avon</ion-select-option>
+                                        <ion-select-option value="Marketing Personal">Marketing Personal</ion-select-option>
+                                        <ion-select-option value="Omnilife">Omnilife</ion-select-option>
+                                        <ion-select-option value="Lebel">Lebel</ion-select-option>
+                                    </ion-select>
+                                </ion-item>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col class="ion-text-center">
+                                <p>Escoje una de las empresas listadas.</p>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col class="ion-text-center">
+                                <ion-button style="--background: #4F47BF;" (click)="Simular()">Simular</ion-button>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+
+                </ion-card-content>
+            </ion-card>
+        </ion-item>
+    </div>
+</ion-content>
+<ion-footer class="ion-no-border " style="background-color: #4F47BF; ">
+    <ion-toolbar class="toolbar-footer ">
+        <ion-tabs style="background-color: #4F47BF; ">
+            <ion-tab-bar slot="bottom " style="background-color: #4F47BF; ">
+                <ion-tab-button (click)="Historial() " style="background-color: #4F47BF; ">
+                    <ion-icon name="list-circle" style="font-size: 23px;color: white; "></ion-icon>
+                    <ion-label style="color: white; ">Historial</ion-label>
+                </ion-tab-button>
+
+                <ion-tab-button (click)="Dashboard() " style="background-color: #4F47BF; ">
+                    <ion-icon name="home" style="font-size: 23px;color: white; "></ion-icon>
+                    <ion-label style="color: white; ">Home</ion-label>
+                </ion-tab-button>
+
+                <ion-tab-button (click)="Notificacion() " style="background-color: #4F47BF; ">
+                    <ion-icon name="notifications" style="font-size: 23px;color: white; "></ion-icon>
+                    <ion-label style="color: white; ">Notificación</ion-label>
+                </ion-tab-button>
+            </ion-tab-bar>
+        </ion-tabs>
+    </ion-toolbar>
+</ion-footer>

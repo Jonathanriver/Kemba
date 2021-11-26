@@ -1,0 +1,136 @@
+<ion-header class="header-Dashboard">
+    <ion-toolbar class="toolbar-dashboard">
+        <!-- <ion-title>Dashboard</ion-title> -->
+        <ion-grid>
+            <ion-row>
+                <ion-col size="4" class="ion-text-center">
+                    <img src="../../assets/images/IMAGEN PERFIL CABECERA.png" alt="" class="imagen-header" (click)="editar()">
+                </ion-col>
+                <ion-col size="8" class="ion-text-left">
+                    <ion-item lines="none" style="--background: transparent;">
+                        <p slot="start" style="font-size: 20px;font-weight: bold;color: white;margin: 26px 0px 0px 0px;text-transform: capitalize;">
+                            {{Nombre}}</p>
+                        <ion-icon style="font-size: 20px;font-weight: bold;color: white;margin: 26px 0px 0px 0px;text-transform: capitalize;" slot="end" name="exit-outline" (click)="Salir()"></ion-icon>
+
+                    </ion-item>
+                    <p style="font-size: 10px;color: white;margin-left:17px;">Último ingreso: 19/03/2021</p>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-toolbar>
+</ion-header>
+<ion-content padding>
+    <br>
+    <ion-list>
+        <ion-item lines="none" class="ion-text-center">
+            <ion-grid>
+                <ion-row>
+                    <ion-col size="12" class="ion-text-center">
+                        <p style="color: #4F47BF;font-size: 15px;font-family: 'Berlin';" class="ion-text-center">
+                            <!-- <ion-icon name="calculator-outline" style="color: #EC268F;font-size: 19px;"></ion-icon> -->
+                            <img src=" ../../assets/images/LOGO BANKEM.png " style="width: 30px;vertical-align: middle;">Simulador
+                        </p>
+                        <hr style="color: #4F47BF;border: solid 0.5px #4F47BF">
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
+        <ion-item lines="none">
+            <p class="ion-text-left texto-simulador" style="font-size: 15px;">
+                Calcula el valor de la cuota o el monto que puedes solicitar de acuerdo con las necesidades de crédito y capacidad de pago.
+            </p>
+        </ion-item>
+        <ion-item lines="none">
+            <ion-grid>
+                <ion-row>
+                    <ion-col class="ion-text-center">
+                        <p class="ion-text-center" style="color:#4F47BF;font-family: 'Berlin';">
+                            Caracteristicas
+                        </p>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col size="2">
+                        <ion-icon name="person-outline" style="font-size:40px;color:#EC268F;"></ion-icon>
+                    </ion-col>
+                    <ion-col size="10">
+                        <p class="ion-text-left texto-simulador" style="font-size: 15px;">
+                            Edad entre <span style="font-weight: bold;">18 y 34</span>
+                        </p>
+                    </ion-col>
+
+                </ion-row>
+                <ion-row>
+                    <ion-col size="2">
+                        <ion-icon name="cash-outline" style="font-size:40px;color:#EC268F;"></ion-icon>
+                    </ion-col>
+                    <ion-col size="10">
+                        <p class="ion-text-left texto-simulador" style="font-size: 15px;">
+                            Monto Minimo de <span style="font-weight: bold;">$150.000</span>
+                        </p>
+                    </ion-col>
+
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="2">
+                        <ion-icon name="calendar-outline" style="font-size:40px;color:#EC268F;"></ion-icon>
+                    </ion-col>
+                    <ion-col size="10">
+                        <p class="ion-text-left texto-simulador" style="font-size: 15px;">
+                            Plazo entre <span style="font-weight: bold;">48 y 84 meses</span>
+                        </p>
+                    </ion-col>
+
+                </ion-row>
+                <ion-row>
+                    <ion-col size="2">
+                        <ion-icon name="wallet-outline" style="font-size:40px;color:#EC268F;"></ion-icon>
+                    </ion-col>
+                    <ion-col size="10">
+                        <p class="ion-text-left texto-simulador" style="font-size: 15px;">
+                            Puedes hacer pagos <span style="font-weight: bold;">extraordinarios y cancelacion</span> sin sanción.
+                        </p>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
+        <ion-item lines="none" style="--background: transparent;">
+            <ion-label slot="" style="font-size: 12px;">Aceptar <span style="color: #EC268F;font-weight: bold;">Terminos</span> y <span style="color: #EC268F;font-weight: bold">Condiciones</span> de <span style="color: #4F47BF;">KEMBA</span>.
+            </ion-label>
+            <ion-checkbox [(ngModel)]="record" slot="start" color="tertiary" required></ion-checkbox>
+        </ion-item>
+        <ion-item lines="none">
+            <ion-grid>
+                <ion-row>
+                    <ion-col size="12" class="ion-text-center">
+                        <ion-button size="full" style="--background: #EC268F;" (click)="Siguiente()">Continuar</ion-button>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
+    </ion-list>
+
+</ion-content>
+<ion-footer class="ion-no-border " style="background-color: #4F47BF; ">
+    <ion-toolbar class="toolbar-footer ">
+        <ion-tabs style="background-color: #4F47BF; ">
+            <ion-tab-bar slot="bottom " style="background-color: #4F47BF; ">
+                <ion-tab-button (click)="Historial() " style="background-color: #4F47BF; ">
+                    <ion-icon name="list-circle" style="font-size: 23px;color: white; "></ion-icon>
+                    <ion-label style="color: white; ">Historial</ion-label>
+                </ion-tab-button>
+
+                <ion-tab-button (click)="Dashboard() " style="background-color: #4F47BF; ">
+                    <ion-icon name="home" style="font-size: 23px;color: white; "></ion-icon>
+                    <ion-label style="color: white; ">Home</ion-label>
+                </ion-tab-button>
+
+                <ion-tab-button (click)="Notificacion() " style="background-color: #4F47BF; ">
+                    <ion-icon name="notifications" style="font-size: 23px;color: white; "></ion-icon>
+                    <ion-label style="color: white; ">Notificación</ion-label>
+                </ion-tab-button>
+            </ion-tab-bar>
+        </ion-tabs>
+    </ion-toolbar>
+</ion-footer>

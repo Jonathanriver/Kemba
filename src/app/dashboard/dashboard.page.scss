@@ -1,0 +1,35 @@
+.header-Dashboard {
+    height: 120px;
+}
+
+.toolbar-dashboard {
+    --background: #4F47BF;
+    border-radius: 0px 0px 0px 0px;
+    // box-shadow: 0px 12px #FF457A;
+}
+
+.imagen-header {
+    width: 100px;
+    height: 100px;
+}
+
+.card-dashboard {
+    // box-shadow: -7px 5px 1px #FF457A;
+    border-radius: 26px;
+    margin: 17px;
+    border: solid 0.5px silver;
+    --background: #d3d6e2b0;
+}
+
+.imagen-dashboard {
+    width: 120px;
+    height: 87px;
+}
+
+.toolbar-footer {
+    --background: rgb(243, 242, 242);
+}
+
+.fondo-marca {
+    --background: url('../../assets/images/marcaagua.png') 0 0/100% 100% no-repeat !important;
+}

@@ -1,0 +1,95 @@
+<ion-header class="header-Dashboard">
+    <ion-toolbar class="toolbar-dashboard">
+        <!-- <ion-title>Dashboard</ion-title> -->
+        <ion-grid>
+            <ion-row>
+                <ion-col size="4" class="ion-text-center">
+                    <img src="../../assets/images/IMAGEN PERFIL CABECERA.png" alt="" class="imagen-header">
+                </ion-col>
+                <ion-col size="8" class="ion-text-left">
+                    <ion-item lines="none" style="--background: transparent;">
+                        <p slot="start" style="font-size: 20px;font-weight: bold;color: white;margin: 26px 0px 0px 0px;text-transform: capitalize;">
+                            {{Nombre}}</p>
+                        <ion-icon style="font-size: 20px;font-weight: bold;color: white;margin: 26px 0px 0px 0px;text-transform: capitalize;" slot="end" name="exit-outline" (click)="Salir()"></ion-icon>
+
+                    </ion-item>
+                    <p style="font-size: 10px;color: white;margin-left:17px;">Último ingreso: 19/03/2021</p>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="">
+    <ion-list style="background: transparent;">
+        <ion-item lines="none" style="--background: transparent;">
+            <ion-grid style="--background: transparent;">
+                <ion-row>
+                    <ion-col size="5" class="ion-text-right">
+                        <img src="../../assets/images/LOGO BANKEM.png" alt="" style="width: 60px;height: 60px;">
+                    </ion-col>
+                    <ion-col size="7" class="ion-text-left">
+                        <p style="color: #4F47BF;text-transform: uppercase;margin-top: 18px;font-weight: bold;font-size: 20px;">
+                            Perfil</p>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col style="border-radius: 15px;padding: 12px;">
+                        <ion-item lines="none" style="--background: transparent;">
+                            <ion-label position="stacked" style="color:gray;">Nombre</ion-label>
+                            <ion-input type="text" style="border-bottom: solid 0.5px gray;"></ion-input><ion-icon slot="end" name="person-outline"></ion-icon>
+                        </ion-item>
+                        <ion-item lines="none" style="--background: transparent;">
+                            <ion-label position="stacked" style="color:gray;">Documento</ion-label>
+                            <ion-input type="number" style="border-bottom: solid 0.5px gray;"></ion-input><ion-icon slot="end" name="id-card-outline"></ion-icon>
+                        </ion-item>
+                        <ion-item lines="none" style="--background: transparent;">
+                            <ion-label position="stacked" style="color:gray;">Email</ion-label>
+                            <ion-input type="email" style="border-bottom: solid 0.5px gray;"></ion-input><ion-icon slot="end" name="mail-outline"></ion-icon>
+                        </ion-item>
+                        <ion-item lines="none" style="--background: transparent;">
+                            <ion-label position="stacked" style="color:gray;">Télefono</ion-label>
+                            <ion-input type="number" style="border-bottom: solid 0.5px gray;"></ion-input><ion-icon slot="end" name="call-outline"></ion-icon>
+                        </ion-item>
+                        <ion-item lines="none" style="--background: transparent;">
+                            <ion-label position="stacked" style="color:gray;">Usuario</ion-label>
+                            <ion-input type="text" style="border-bottom: solid 0.5px gray;"></ion-input><ion-icon slot="end" name="person-circle-outline"></ion-icon>
+                        </ion-item>
+                        
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
+        <ion-item lines="none" style="--background: transparent;">
+            <ion-grid style="--background: transparent;">
+                <ion-row>
+                    <ion-col class="ion-text-right">
+
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
+    </ion-list>
+</ion-content>
+<ion-footer class="ion-no-border" style="background-color: #4F47BF;">
+    <ion-toolbar class="toolbar-footer">
+        <ion-tabs style="background-color: #4F47BF;">
+            <ion-tab-bar slot="bottom" style="background-color: #4F47BF;">
+                <ion-tab-button (click)="Historial()" style="background-color: #4F47BF;">
+                    <ion-icon name="list-circle" style="font-size: 23px;color: white;"></ion-icon>
+                    <ion-label style="color: white;">Historial</ion-label>
+                </ion-tab-button>
+
+                <ion-tab-button (click)="Dashboard()" style="background-color: #4F47BF;">
+                    <ion-icon name="home" style="font-size: 23px;color: white; "></ion-icon>
+                    <ion-label style="color: white; ">Home</ion-label>
+                </ion-tab-button>
+
+                <ion-tab-button (click)="Notificacion() " style="background-color: #4F47BF;">
+                    <ion-icon name="notifications" style="font-size: 23px;color: white; "></ion-icon>
+                    <ion-label style="color: white; ">Notificación</ion-label>
+                </ion-tab-button>
+            </ion-tab-bar>
+        </ion-tabs>
+    </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,109 @@
+<ion-header class="header-Dashboard">
+    <ion-toolbar class="toolbar-dashboard">
+        <!-- <ion-title>Dashboard</ion-title> -->
+        <ion-grid>
+            <ion-row>
+                <ion-col size="4" class="ion-text-center">
+                    <img src="../../assets/images/IMAGEN PERFIL CABECERA.png" alt="" class="imagen-header" (click)="editar()">
+                </ion-col>
+                <ion-col size="8" class="ion-text-left">
+                    <ion-item lines="none" style="--background: transparent;">
+                        <p slot="start" style="font-size: 20px;font-weight: bold;color: white;margin: 26px 0px 0px 0px;text-transform: capitalize;">
+                            {{Nombre}}</p>
+                        <ion-icon style="font-size: 20px;font-weight: bold;color: white;margin: 26px 0px 0px 0px;text-transform: capitalize;" slot="end" name="exit-outline" (click)="Salir()"></ion-icon>
+
+                    </ion-item>
+                    <p style="font-size: 10px;color: white;margin-left:17px;">Último ingreso: 19/03/2021</p>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="">
+    <ion-list style="background: transparent;">
+        <ion-item lines="none" style="--background: transparent;">
+            <ion-grid style="--background: transparent;">
+                <ion-row>
+                    <ion-col size="4" class="ion-text-right">
+                        <img src="../../assets/images/LOGO BANKEM.png" alt="" style="width: 60px;height: 60px;">
+                    </ion-col>
+                    <ion-col size="8" class="ion-text-left">
+                        <p style="color: #4F47BF;text-transform: uppercase;margin-top: 18px;font-weight: bold;font-size: 20px;">
+                            Mi CrediKemba</p>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
+        <ion-item lines="none" style="--background: transparent;">
+            <p class="ion-text-center" style="font-size: 15px;color: #4A4A4A;">
+                Nuestros emprendedores obtendrán créditos para que inicien sus negocios en empresas multinivel debidamente constituidas y que cumplan con las normas de la legislación colombiana
+            </p>
+        </ion-item>
+
+        <div>
+            <ion-card lines="none">
+                <ion-card-content>
+                    <ion-item lines="none" (click)="Simulador()">
+                        <!-- <ion-label position="stacked" >Nombre Completo</ion-label> -->
+                        <ion-icon name="calculator-outline" style="color: #EC268F;font-size: 30px;"></ion-icon>
+                        <p style="font-size: 17px;font-family: 'Josefin-light';color: #4F47BF;" class="ion-text-center">
+                            &nbsp;&nbsp;&nbsp;Simulador Credito</p>
+                        <ion-icon slot="end" name="arrow-forward-circle-outline" style="color: #EC268F;font-size: 30px;"></ion-icon>
+                    </ion-item>
+
+
+                </ion-card-content>
+            </ion-card>
+
+
+            <ion-card lines="none">
+                <ion-card-content>
+                    <ion-item lines="none" (click)="Solicitud()">
+                        <!-- <ion-label position="stacked" >Nombre Completo</ion-label> -->
+                        <ion-icon name="document-text-outline" style="color: #EC268F;font-size: 30px;"></ion-icon>
+                        <p style="font-size: 17px;font-family: 'Josefin-light';color: #4F47BF;" class="ion-text-center">
+                            &nbsp;&nbsp;&nbsp;Solicitud Credito</p>
+                        <ion-icon slot="end" name="arrow-forward-circle-outline" style="color: #EC268F;font-size: 30px;"></ion-icon>
+                    </ion-item>
+                </ion-card-content>
+            </ion-card>
+
+
+            <ion-card lines="none">
+                <ion-card-content>
+                    <ion-item lines="none" (click)="Documentacion()">
+                        <!-- <ion-label position="stacked" >Nombre Completo</ion-label> -->
+                        <ion-icon name="folder-outline" style="color: #EC268F;font-size: 30px;"></ion-icon>
+                        <p style="font-size: 17px;font-family: 'Josefin-light';color: #4F47BF;" class="ion-text-center">
+                            &nbsp;&nbsp;&nbsp;Documentos Credito</p>
+                        <ion-icon slot="end" name="arrow-forward-circle-outline" style="color: #EC268F;font-size: 30px;"></ion-icon>
+                    </ion-item>
+                </ion-card-content>
+            </ion-card>
+        </div>
+    </ion-list>
+</ion-content>
+
+<ion-footer class="ion-no-border" style="background-color: #4F47BF;">
+    <ion-toolbar class="toolbar-footer">
+        <ion-tabs style="background-color: #4F47BF;">
+            <ion-tab-bar slot="bottom" style="background-color: #4F47BF;">
+                <ion-tab-button (click)="Historial()" style="background-color: #4F47BF;">
+                    <ion-icon name="list-circle" style="font-size: 23px;color: white;"></ion-icon>
+                    <ion-label style="color: white;">Historial</ion-label>
+                </ion-tab-button>
+
+                <ion-tab-button (click)="Dashboard()" style="background-color: #4F47BF;">
+                    <ion-icon name="home" style="font-size: 23px;color: white; "></ion-icon>
+                    <ion-label style="color: white; ">Home</ion-label>
+                </ion-tab-button>
+
+                <ion-tab-button (click)="Notificacion() " style="background-color: #4F47BF;">
+                    <ion-icon name="notifications" style="font-size: 23px;color: white; "></ion-icon>
+                    <ion-label style="color: white; ">Notificación</ion-label>
+                </ion-tab-button>
+            </ion-tab-bar>
+        </ion-tabs>
+    </ion-toolbar>
+</ion-footer>

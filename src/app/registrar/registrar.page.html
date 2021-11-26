@@ -1,0 +1,86 @@
+<ion-content class="body-App">
+    <ion-item style="--background: transparent;margin-top: 35px;text-align: center;" lines="none" class="ion-text-center">
+        <ion-grid>
+            <ion-row>
+                <ion-col class="ion-text-center">
+                    <img src="../../assets/images/LOGO KEMBA.png" alt="" class="imagen-registro">
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-item>
+
+    <div>
+        <ion-card lines="none" no-lines>
+            <ion-card-header>
+                <h4 class="ion-text-left" style="font-family: 'Berlin';color: #EF248E;text-transform: capitalize;font-size: 17px;">Crear
+                    <br>Cuenta
+                </h4>
+            </ion-card-header>
+            <ion-card-content>
+                <ion-item>
+                    <!-- <ion-label position="stacked" >Nombre Completo</ion-label> -->
+                    <ion-input [(ngModel)]="nombre" style="font-size: 12px;font-family: 'Josefin-light';color: gray;" placeholder="Nombre Completo"></ion-input>
+                    <ion-icon name="person-outline" style="color: gray;"></ion-icon>
+                </ion-item>
+                <ion-item>
+                    <!-- <ion-label position="stacked" >Nombre Completo</ion-label> -->
+                    <ion-select [(ngModel)]="tipo_doc" style="font-size: 12px;font-family: 'Josefin-light';color: gray;" placeholder="Tipo Documento">
+                        <ion-select-option>Cédula de Ciudadania</ion-select-option>
+                        <ion-select-option>Cédula de Extrangeria</ion-select-option>
+                        <ion-select-option>Pasaporte</ion-select-option>
+                    </ion-select>
+                    <ion-icon name="id-card-outline" slot="end" style="color: gray;"></ion-icon>
+                </ion-item>
+                <ion-item>
+                    <!-- <ion-label position="stacked" >Nombre Completo</ion-label> -->
+                    <ion-input [(ngModel)]="documento" type="number" style="font-size: 12px;font-family: 'Josefin-light';color: gray;" placeholder="Número Documento"></ion-input>
+                    <ion-icon name="document-text-outline" style="color: gray;"></ion-icon>
+                </ion-item>
+                <ion-item>
+                    <!-- <ion-label position="stacked" >Nombre Completo</ion-label> -->
+                    <ion-input [(ngModel)]="email" type="email" style="font-size: 12px;font-family: 'Josefin-light';color: gray;" placeholder="Email"></ion-input>
+                    <ion-icon name="mail-outline" style="color: gray;"></ion-icon>
+                </ion-item>
+                <ion-item>
+                    <!-- <ion-label position="stacked" >Nombre Completo</ion-label> -->
+                    <ion-input [(ngModel)]="telefono" type="number" style="font-size: 12px;font-family: 'Josefin-light';color: gray;" placeholder="Teléfono"></ion-input>
+                    <ion-icon name="call-outline" style="color: gray;"></ion-icon>
+                </ion-item>
+                <ion-item>
+                    <!-- <ion-label position="stacked" >Nombre Completo</ion-label> -->
+                    <ion-input [(ngModel)]="username" type="text" style="font-size: 12px;font-family: 'Josefin-light';color: gray;" placeholder="Nombre Usuario"></ion-input>
+                    <ion-icon name="person-outline" style="color: gray;"></ion-icon>
+                </ion-item>
+                <ion-item>
+                    <!-- <ion-label position="stacked" >Nombre Completo</ion-label> -->
+                    <ion-input [(ngModel)]="password" type="password" style="font-size: 12px;font-family: 'Josefin-light';color: gray;" placeholder="Contraseña"></ion-input>
+                    <ion-icon name="key-outline" style="color: gray;"></ion-icon>
+                </ion-item>
+                <ion-item>
+                    <!-- <ion-label position="stacked" >Nombre Completo</ion-label> -->
+                    <ion-input [(ngModel)]="repassword" type="password" style="font-size: 12px;font-family: 'Josefin-light';color: gray;" placeholder="Confirmar Contraseña"></ion-input>
+                    <ion-icon name="key-outline" style="color: gray;"></ion-icon>
+                </ion-item>
+
+                <ion-item lines="none">
+                    <ion-label style="color: gray;">Acepta <span style="color:#404E9E;font-weight: bold;">terminos</span> y <span style="color:#404E9E;font-weight: bold;">condiciones</span></ion-label>
+                    <ion-checkbox slot="end" [(ngModel)]="valida" color="tertiary"></ion-checkbox>
+                </ion-item>
+
+            </ion-card-content>
+        </ion-card>
+    </div>
+
+</ion-content>
+<ion-footer class="ion-no-border">
+    <ion-toolbar>
+        <ion-item lines="none">
+            <ion-button style="--background: #4F47BF;width: 100%;height: 40px;" (click)="Registrar()">Registrar</ion-button>
+
+        </ion-item>
+        <ion-item lines="none">
+            <p style="color: gray;font-size: 17px;">Ya tienes una cuenta, por favor <a style="color:#404E9E;font-weight: bold;" (click)="Atras()">Inicia sesión</a></p>
+
+        </ion-item>
+    </ion-toolbar>
+</ion-footer>

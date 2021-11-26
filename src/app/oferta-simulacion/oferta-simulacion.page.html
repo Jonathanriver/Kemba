@@ -1,0 +1,136 @@
+<ion-header class="header-Dashboard">
+    <ion-toolbar class="toolbar-dashboard">
+        <!-- <ion-title>Dashboard</ion-title> -->
+        <ion-grid>
+            <ion-row>
+                <ion-col size="4" class="ion-text-center">
+                    <img src="../../assets/images/IMAGEN PERFIL CABECERA.png" alt="" class="imagen-header" (click)="editar()">
+                </ion-col>
+                <ion-col size="8" class="ion-text-left">
+                    <ion-item lines="none" style="--background: transparent;">
+                        <p slot="start" style="font-size: 20px;font-weight: bold;color: white;margin: 26px 0px 0px 0px;text-transform: capitalize;">
+                            {{Nombre}}</p>
+                        <ion-icon style="font-size: 20px;font-weight: bold;color: white;margin: 26px 0px 0px 0px;text-transform: capitalize;" slot="end" name="exit-outline" (click)="Salir()"></ion-icon>
+
+                    </ion-item>
+                    <p style="font-size: 10px;color: white;margin-left:17px;">Último ingreso: 19/03/2021</p>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+        <ion-item lines="none">
+            <ion-grid>
+                <ion-row>
+                    <ion-col size="12" class="ion-text-center">
+                        <p>Te ofrecemos estas opciones para tu solicitud de Crédito</p>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
+        <ion-item lines="none">
+            <ion-card style="width: 100%;">
+                <ion-card-header style="background: #4F47BF;" class="ion-text-center">
+                    <p style="font-family: 'Berlin';color: white;">
+                        Tasa fija - Cuota Variable
+                    </p>
+                </ion-card-header>
+                <ion-card-content>
+                    <ion-grid>
+                        <ion-row>
+                            <ion-col class="ion-text-center" size="12">
+                                Por un credito de:
+                            </ion-col>
+                            <ion-col class="ion-text-center" size="12">
+                                <p style="font-size: 25px;color: #EC268F;">{{ SaldoInicial|currency }}</p>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row style="background: rgba(192, 192, 192, 0.322);">
+                            <ion-col class="ion-text-center" size="12">
+                                Pagarias a {{Tiempo}} cuotas mensuales por un valor aproximado de :
+                            </ion-col>
+                            <ion-col class="ion-text-center" size="12">
+                                <p style="font-size: 25px;color: #EC268F;">{{ ValorPaso|currency }}</p>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col class="ion-text-center" size="12">
+                                Tasas y tarifas:
+                            </ion-col>
+                            <ion-col class="ion-text-center" size="12">
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td class="ion-text-left">
+                                            Tasa mes vencido
+                                        </td>
+                                        <td class="ion-text-right">
+                                            2.4%
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ion-text-left">
+                                            Seguro de vida
+                                        </td>
+                                        <td class="ion-text-right">
+                                            $1.800.00
+                                        </td>
+                                    </tr>
+                                </table>
+                            </ion-col>
+                        </ion-row>
+                        <hr style="border: solid 0.5px #4F47BF;">
+                        <ion-row>
+                            <ion-col class="ion-text-left" size="12">
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td class="ion-text-left">
+                                            <a style="text-decoration: underline;color: #EC268F;" (click)="Resumen()">Conocer el plan de
+                                                pagos</a>
+                                        </td>
+                                        <td class="ion-text-right">
+                                            <ion-icon name="add-circle-outline" style="color: #EC268F;font-size: 20px;">
+                                            </ion-icon>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </ion-col>
+                        </ion-row>
+                        <hr style="border: solid 0.5px #4F47BF;">
+                        <ion-row>
+                            <ion-col class="ion-text-center" size="12">
+                                <ion-button style="--background: #EC268F;">Solicitar Credito</ion-button>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+
+                </ion-card-content>
+            </ion-card>
+        </ion-item>
+    </ion-list>
+</ion-content>
+
+<ion-footer class="ion-no-border " style="background-color: #4F47BF; ">
+    <ion-toolbar class="toolbar-footer ">
+        <ion-tabs style="background-color: #4F47BF; ">
+            <ion-tab-bar slot="bottom " style="background-color: #4F47BF; ">
+                <ion-tab-button (click)="Historial() " style="background-color: #4F47BF; ">
+                    <ion-icon name="list-circle" style="font-size: 23px;color: white; "></ion-icon>
+                    <ion-label style="color: white; ">Historial</ion-label>
+                </ion-tab-button>
+
+                <ion-tab-button (click)="Dashboard() " style="background-color: #4F47BF; ">
+                    <ion-icon name="home" style="font-size: 23px;color: white; "></ion-icon>
+                    <ion-label style="color: white; ">Home</ion-label>
+                </ion-tab-button>
+
+                <ion-tab-button (click)="Notificacion() " style="background-color: #4F47BF; ">
+                    <ion-icon name="notifications" style="font-size: 23px;color: white; "></ion-icon>
+                    <ion-label style="color: white; ">Notificación</ion-label>
+                </ion-tab-button>
+            </ion-tab-bar>
+        </ion-tabs>
+    </ion-toolbar>
+</ion-footer>
